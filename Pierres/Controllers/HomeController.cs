@@ -23,10 +23,11 @@ public class HomeController : Controller
         [HttpGet("/")]
         public async Task<ActionResult> Index()
         {
-            Treat[] treats = _db.treats.ToArray();
+            Treat[] treats = _db.Treats.ToArray();
+            Flavor[] flavors = _db.Flavors.ToArray();
             Dictionary<string, object[]> model = new Dictionary<string, object[]>();
             model.Add("treats", treats);
-            model.Add("flavor", flavor);
+            model.Add("flavors", flavors);
             string userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
             return View(model);
