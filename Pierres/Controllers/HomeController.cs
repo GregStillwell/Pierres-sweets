@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using SponsorMatch.Models;
+using Pierres.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
