@@ -2,7 +2,7 @@
 
 #### By _**Greg Stillwell**_
 
-#### 
+####  This website is about adding a login and register, while making a many-to-many relationship about Treats and Flavors.
 
 ## Technologies Used
 
