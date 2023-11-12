@@ -10,6 +10,5 @@ namespace Pierres.Models
     [Required(ErrorMessage = "Please enter a treat name.")]
     public string Name { get; set; }
     public List<FlavorTreat> JoinEntities { get; set; }
-    public ApplicationUser User { get; set; }
   }
 }
