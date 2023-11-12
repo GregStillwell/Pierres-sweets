@@ -81,11 +81,11 @@ namespace Pierres.Controllers
     public ActionResult AddFlavor(Treat treat, int flavorId)
     {
       #nullable enable
-      FlavorTreat? joinEntity = _db.FlavorTreat.FirstOrDefault(join => join.FlavorId == treat.TreatId && join.FlavorId == flavorId );
+      FlavorTreat? joinEntity = _db.FlavorTreats.FirstOrDefault(join => join.FlavorId == treat.TreatId && join.FlavorId == flavorId );
       #nullable disable
       if (flavorId != 0 && joinEntity == null)
       {
-        _db.FlavorTreat.Add(new FlavorTreat() { TreatId = treat.TreatId, FlavorId = flavorId });
+        _db.FlavorTreats.Add(new FlavorTreat() { TreatId = treat.TreatId, FlavorId = flavorId });
         _db.SaveChanges();
       }
       return RedirectToAction("Details", new { id = treat.TreatId });
@@ -99,7 +99,7 @@ namespace Pierres.Controllers
       {
         ErrorViewModel error = new ErrorViewModel();
         error.ErrorMessage = "You must be logged in to do that.";
-        FlavorTreat joinEntry = _db.FlavorTreat.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
+        FlavorTreat joinEntry = _db.FlavorTreats.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
         int treatId = joinEntry.TreatId;
         Dictionary<string, object> model = new Dictionary<string, object>();
         model.Add("error", error);
@@ -108,8 +108,8 @@ namespace Pierres.Controllers
       }
       else
       {
-        FlavorTreat joinEntry = _db.FlavorTreat.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
-        _db.FlavorTreat.Remove(joinEntry);
+        FlavorTreat joinEntry = _db.FlavorTreats.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
+        _db.FlavorTreats.Remove(joinEntry);
         _db.SaveChanges();
         return RedirectToAction("Details", new { id = joinEntry.TreatId });
       }
