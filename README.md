@@ -16,7 +16,7 @@
 
 ## Setup / Installation Requirements / Configuration (1)
 * Open Terminal/Command line
-* type **git clone  into the terminal and press Enter on the keyboard
+* type **git clone https://github.com/GregStillwell/Pierres-sweets into the terminal and press Enter on the keyboard
 * Navigate to the desktop and click on the "Pierres.Solution" folder.
 * Open the folder in VS Code
 
@@ -32,8 +32,8 @@
 * In the terminal navigate to the project directory "Pierres".
 * Next, will add the file. In the terminal, enter the following:
   - $ touch appsettings.json
-* Open the file in the code editor, and enter the following:
-  ```json
+* Open the file and copy and paste the following:
+  ```
   {
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Port=3306;database=[YOUR DATABASE NAME];uid=[YOUR USER ID];pwd=[YOUR PASSWORD];"
