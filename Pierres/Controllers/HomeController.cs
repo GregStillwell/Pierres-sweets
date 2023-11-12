@@ -9,7 +9,7 @@ using System.Security.Claims;
 
 namespace Pierres.Controllers;
 
-public class HomeController : Controller
+    public class HomeController : Controller
  {
         private readonly PierresContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
