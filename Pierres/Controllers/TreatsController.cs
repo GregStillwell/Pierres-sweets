@@ -56,7 +56,7 @@ namespace Pierres.Controllers
     public ActionResult AddFlavor(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
-      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Type");
       return View(thisTreat);
     }
 
